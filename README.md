@@ -1,3 +1,11 @@
+# SHOP-FRONT #
+
+## IMPORTANT ## 
+
+To execute that service you need to run the [shop-back](https://github.com/torto/shop-back) service in dev mode or change in `src/app/shared/constants.ts` the url port to 8081
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
