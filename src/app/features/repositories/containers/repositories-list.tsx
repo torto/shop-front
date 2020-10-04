@@ -25,7 +25,7 @@ import {
 import DataTable from "../components/data-table";
 import RepositoryItem from "./repository-item";
 import AppBar from "../components/appbar/appbar";
-import Error from "../components/error";
+import Error from "../../../shared/components/error";
 
 const styles: (theme: Theme) => StyleRules<string> = (theme) =>
   createStyles({
@@ -39,6 +39,7 @@ type RepositoriesProps = {} & WithStyles<typeof styles>;
 const RepositoriesList = ({ classes }: RepositoriesProps) => {
   const { data, isLoading, error, total } = useSelector(repositories);
   const dispatch = useDispatch();
+  
   const [query, setQuery] = useState<IRepositoriesQuery>({
     perPage: 10,
     page: 1,
@@ -87,13 +88,13 @@ const RepositoriesList = ({ classes }: RepositoriesProps) => {
     changeQuery({ date: e.target.value });
   };
 
-  const test = throttle(changeQuery, 500, {
+  const languageThrottle = throttle(changeQuery, 500, {
     leading: false,
     trailing: true,
   });
 
   const onChangeLanguage = (e: ChangeEvent<HTMLInputElement>) => {
-    test({ language: e.target.value });
+    languageThrottle({ language: e.target.value });
   };
 
   useEffect(() => {

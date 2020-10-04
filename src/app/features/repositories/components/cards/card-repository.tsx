@@ -78,9 +78,9 @@ const CardRepository = ({
           )
         }
         title={
-            <strong>
-              {type} - {login}
-            </strong>
+          <strong>
+            {type} - {login}
+          </strong>
         }
         subheader={`Created - ${formatRFC7231(new Date(created_at))}`}
       />
@@ -95,19 +95,16 @@ const CardRepository = ({
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton
+          aria-label="add to favorites"
+          onClick={() => {
+            handleToggleStar();
+          }}
+        >
           {isStar ? (
-            <Star
-              onClick={() => {
-                handleToggleStar();
-              }}
-            />
+            <Star />
           ) : (
-            <StarBorder
-              onClick={() => {
-                handleToggleStar();
-              }}
-            />
+            <StarBorder />
           )}
         </IconButton>
         <Typography

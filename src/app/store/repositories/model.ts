@@ -1,10 +1,10 @@
 export interface IRepositoriesData {
   total: number;
-  data: [IRepository];
+  data: IRepository[];
 }
 
 export interface IRepositoriesState {
-  data: [IRepository] | [];
+  data: IRepository[] | [];
   total: number;
   isLoading: boolean;
   error: string | null;

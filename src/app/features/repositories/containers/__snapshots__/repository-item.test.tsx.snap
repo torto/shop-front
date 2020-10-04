@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component and trigger handleToggleStar 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root MuiCard-root CardEmpty-card-11 MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <div
+      class="MuiCardHeader-root"
+    >
+      <div
+        class="MuiCardHeader-avatar"
+      >
+        <span
+          class="MuiSkeleton-root MuiSkeleton-circle MuiSkeleton-wave"
+          style="width: 40px; height: 40px;"
+        />
+      </div>
+      <div
+        class="MuiCardHeader-content"
+      >
+        <span
+          class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"
+        >
+          <span
+            class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+            style="width: 80%; height: 10px; margin-bottom: 6px;"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+        >
+          <span
+            class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+            style="width: 40%; height: 10px;"
+          />
+        </span>
+      </div>
+    </div>
+    <span
+      class="MuiSkeleton-root MuiSkeleton-rect CardEmpty-media-12 MuiSkeleton-wave"
+    />
+    <div
+      class="MuiCardContent-root"
+    >
+      <span
+        class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+        style="height: 10px; margin-bottom: 6px;"
+      />
+      <span
+        class="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+        style="width: 80%; height: 10px;"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

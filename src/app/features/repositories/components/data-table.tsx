@@ -16,6 +16,7 @@ import {
   SortModel,
   SortDirection,
   RowSelectedParams,
+  FeatureMode  
 } from "@material-ui/data-grid";
 
 const styles: (theme: Theme) => StyleRules<string> = (theme) =>
@@ -28,9 +29,11 @@ const styles: (theme: Theme) => StyleRules<string> = (theme) =>
 
 type DataTableComponentProps = {
   isLoading: boolean;
-  data: [IRepository] | [];
+  data: IRepository[] | [];
   total: number;
   query: IRepositoriesQuery;
+  mode?: FeatureMode;
+  autoHeight?: boolean;
   onPageChange: (param: PageChangeParams) => void;
   onSortChange: (params: SortModelParams) => void;
   onPerPageChange: (params: PageChangeParams) => void;
@@ -43,20 +46,18 @@ const DataTableComponent = ({
   data,
   total,
   query,
+  mode = "server",
+  autoHeight = false,
   onPageChange,
   onSortChange,
   onPerPageChange,
   onRowSelected,
 }: DataTableComponentProps) => {
+  const [width, setWidth] = useState(330);
+  const ref: any = useRef(null);
 
- const [width, setWidth] = useState(330);
-  const ref:any = useRef(null);
-  
-  
   useLayoutEffect(() => {
     const handleResize = () => {
-      console.log(ref.current);
-
       setWidth(ref.current.offsetWidth);
     };
     window.addEventListener("resize", handleResize);
@@ -89,17 +90,18 @@ const DataTableComponent = ({
   return (
     <DataGrid
       ref={ref}
+      autoHeight={autoHeight}
       className={classes.root}
       rows={data}
       columns={columns}
       rowCount={total}
       loading={isLoading}
       pagination
-      paginationMode="server"
+      paginationMode={mode}
       pageSize={query.perPage}
       onPageChange={onPageChange}
       page={query.page}
-      sortingMode="server"
+      sortingMode={mode}
       sortModel={sortModel}
       onSortModelChange={onSortChange}
       rowsPerPageOptions={[10, 50, 100]}
